@@ -1,0 +1,488 @@
+/* ===========================
+   ESTILOS PARA PEDIDO.PHP
+   =========================== */
+
+.carrito-btn {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.carrito-btn:hover,
+.carrito-btn.activo {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Sección del pedido */
+.pedido-section {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.pedido-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #f0e6d6;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.pedido-header h2 {
+    margin: 0;
+    text-align: left;
+}
+
+.pedido-header h2::after {
+    display: none;
+}
+
+.numero-pedido {
+    background: linear-gradient(135deg, #6b4e31, #8b6f47);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 12px rgba(107, 78, 49, 0.3);
+}
+
+.numero-pedido span {
+    display: block;
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin-bottom: 0.2rem;
+}
+
+.numero-pedido strong {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+/* Carrito vacío */
+.carrito-vacio {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.carrito-vacio p:first-child {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    opacity: 0.3;
+}
+
+.carrito-vacio h3 {
+    color: #5d4037;
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.carrito-vacio p:last-of-type {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* Items del pedido */
+.items-pedido {
+    margin-bottom: 2rem;
+}
+
+.item-pedido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: #fffaf0;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    transition: all 0.25s;
+    gap: 1rem;
+}
+
+.item-pedido:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transform: translateX(5px);
+}
+
+.item-info {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    flex: 1;
+}
+
+.item-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.item-detalles h4 {
+    color: #4a2c2a;
+    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+}
+
+.opciones-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.opcion-tag {
+    background: white;
+    color: #6b4e31;
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    border: 1px solid #d0b8a8;
+}
+
+.item-acciones {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.item-precio {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #c85103;
+    min-width: 70px;
+    text-align: right;
+}
+
+.btn-eliminar {
+    background: #d32f2f;
+    color: white;
+    border: none;
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.25s;
+}
+
+.btn-eliminar:hover {
+    background: #b71c1c;
+    transform: scale(1.1);
+}
+
+/* Resumen del pedido */
+.resumen-pedido {
+    background: #f5efe5;
+    padding: 1.8rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.linea-resumen {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    font-size: 1.05rem;
+}
+
+.linea-resumen.total {
+    border-top: 2px solid #d0b8a8;
+    margin-top: 0.8rem;
+    padding-top: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #4a2c2a;
+}
+
+.nota-pago {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1.2rem;
+    text-align: center;
+    border: 2px dashed #c6893f;
+}
+
+.nota-pago p {
+    margin: 0;
+    color: #6b4e31;
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+/* Acciones del pedido */
+.acciones-pedido {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn.principal {
+    flex: 1;
+    min-width: 200px;
+}
+
+.btn.secundario {
+    background: #9e9e9e;
+    flex: 1;
+    min-width: 150px;
+}
+
+.btn.secundario:hover {
+    background: #757575;
+}
+
+.btn.terciario {
+    background: transparent;
+    color: #6b4e31;
+    border: 2px solid #6b4e31;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn.terciario:hover {
+    background: #6b4e31;
+    color: white;
+}
+
+.btn-confirmar {
+    background: #2e7d32;
+    font-size: 1.1rem;
+}
+
+.btn-confirmar:hover {
+    background: #1b5e20;
+}
+
+/* ===========================
+   PEDIDO CONFIRMADO
+   =========================== */
+
+.pedido-confirmado {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.icono-confirmado {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, #2e7d32, #43a047);
+    color: white;
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(46, 125, 50, 0.3);
+    animation: aparecer 0.5s ease;
+}
+
+@keyframes aparecer {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.pedido-confirmado h2 {
+    color: #2e7d32;
+    margin-bottom: 2rem;
+}
+
+.numero-pedido-grande {
+    background: linear-gradient(135deg, #6b4e31, #8b6f47);
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 6px 20px rgba(107, 78, 49, 0.3);
+}
+
+.numero-pedido-grande p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.numero-pedido-grande h3 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.instrucciones {
+    background: #fffaf0;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.instrucciones p {
+    font-weight: 600;
+    color: #5d4037;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.instrucciones ol {
+    list-style-position: inside;
+    color: #666;
+}
+
+.instrucciones li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #f0e6d6;
+}
+
+.instrucciones li:last-child {
+    border-bottom: none;
+}
+
+.total-confirmado {
+    background: #f5efe5;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.total-confirmado p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #4a2c2a;
+    margin: 0;
+}
+
+.total-confirmado span {
+    color: #c85103;
+    font-size: 1.8rem;
+}
+
+.acciones-confirmado {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.acciones-confirmado .btn {
+    margin: 0;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 768px) {
+    .pedido-section {
+        padding: 1.5rem;
+    }
+
+    .pedido-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .numero-pedido {
+        width: 100%;
+    }
+
+    .item-pedido {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .item-info {
+        width: 100%;
+    }
+
+    .item-acciones {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .acciones-pedido {
+        flex-direction: column;
+    }
+
+    .btn.principal,
+    .btn.secundario,
+    .btn.terciario {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .numero-pedido-grande h3 {
+        font-size: 1.5rem;
+    }
+
+    .acciones-confirmado {
+        flex-direction: column;
+    }
+
+    .acciones-confirmado .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .item-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .item-detalles h4 {
+        font-size: 1rem;
+    }
+
+    .item-precio {
+        font-size: 1.1rem;
+    }
+
+    .icono-confirmado {
+        width: 80px;
+        height: 80px;
+        font-size: 3rem;
+    }
+}
+
+/* Estilos para impresión */
+@media print {
+    header, nav, footer, .btn {
+        display: none;
+    }
+
+    .pedido-confirmado {
+        box-shadow: none;
+        padding: 1rem;
+    }
+
+    .icono-confirmado {
+        box-shadow: none;
+    }
+
+    .numero-pedido-grande {
+        box-shadow: none;
+        border: 2px solid #6b4e31;
+    }
+}
